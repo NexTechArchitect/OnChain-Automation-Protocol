@@ -1,14 +1,47 @@
-# Compiler files
-cache/
+# ==============================================================================
+# FOUNDRY & BLOCKCHAIN ARTIFACTS
+# ==============================================================================
 out/
+cache/
+artifacts/
+*.env
+.env.*
+!.env.example
 
-# Ignores development broadcast logs
+# Ignore local Anvil logs but keep public network artifacts
 !/broadcast
 /broadcast/*/31337/
 /broadcast/**/dry-run/
 
-# Docs
-docs/
+# ==============================================================================
+# FRONTEND / NODE DEPENDENCIES & COMPILATION
+# ==============================================================================
+node_modules/
+.next/
+dist/
+build/
+.turbo/
+.eslintcache
+*.tsbuildinfo
 
-# Dotenv file
-.env
+# ==============================================================================
+# OS & SYSTEM FLUFF (FALTU JUNK)
+# ==============================================================================
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ==============================================================================
+# IDE CONFIGURATIONS
+# ==============================================================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
