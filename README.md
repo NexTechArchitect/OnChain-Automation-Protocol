@@ -127,5 +127,3 @@ forge test -vvv
 **Architected & Engineered by [NexTech Architect**](https://github.com/NexTechArchitect)
 
 *Smart Contract Developer · Solidity · Foundry · Full Stack Web3*
-
-Ab tera GitHub landing page bilkul self-explanatory ho gaya hai. Ek normal banda bhi padhega toh usko 10 second mein idea lag jayega ki ye protocol kya solve kar raha hai. Push kar de ise!
