@@ -46,16 +46,16 @@ Most automation protocols rely on centralized cron-bots or permissioned multisig
 The protocol is split into three strictly isolated layers. A bug in execution logic can never reach the keeper bonds, and a bug in the registry can never reach the job escrow funds.
 
 ```mermaid
-graph TD;
-    User[Job Owners] -->|registerJob()| JM[JobManager.sol]
-    JM -.->|Escrow & O(1) Queue| JM
+graph TD
+    User["Job Owners"] -->|"registerJob()"| JM["JobManager.sol"]
+    JM -.->|"Escrow & O(1) Queue"| JM
     
-    Keeper[Keeper Operators] -->|executeJob()| EE[ExecutionEngine.sol]
+    Keeper["Keeper Operators"] -->|"executeJob()"| EE["ExecutionEngine.sol"]
     
-    EE -->|1. Validate Operator| KR[KeeperRegistry.sol]
-    EE -->|2. Validate Job| JM
-    EE -->|3. performUpkeep()| Target[Target Contract]
-    EE -->|4. recordExecution()| JM
+    EE -->|"1. Validate Operator"| KR["KeeperRegistry.sol"]
+    EE -->|"2. Validate Job"| JM
+    EE -->|"3. performUpkeep()"| Target["Target Contract"]
+    EE -->|"4. recordExecution()"| JM
 
 ```
 
@@ -115,6 +115,7 @@ forge test -vvv
 ```
 
 <div align="center">
+---
 
 **Architected & Engineered by [NexTech Architect**](https://github.com/NexTechArchitect)
 
