@@ -125,4 +125,4 @@ forge test -vvv
 
 #### Architected & Engineered by [NexTech Architect**](https://github.com/NexTechArchitect)
 
-### Smart Contract Developer · Solidity · Foundry · Full Stack Web3*
+#### Smart Contract Developer · Solidity · Foundry · Full Stack Web3
