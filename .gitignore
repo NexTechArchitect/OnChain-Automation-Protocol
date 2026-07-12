@@ -1,5 +1,5 @@
 # ==============================================================================
-# FOUNDRY & BLOCKCHAIN ARTIFACTS
+# FOUNDRY & BLOCKCHAIN ARTIFACTS (ROOT & NESTED)
 # ==============================================================================
 out/
 cache/
@@ -14,10 +14,12 @@ artifacts/
 /broadcast/**/dry-run/
 
 # ==============================================================================
-# FRONTEND / NODE DEPENDENCIES & COMPILATION
+# FRONTEND / NODE DEPENDENCIES & NEXT.JS COMPILATION
 # ==============================================================================
 node_modules/
-.next/
+web3-app/node_modules/
+web3-app/.next/
+web3-app/out/
 dist/
 build/
 .turbo/
@@ -25,7 +27,14 @@ build/
 *.tsbuildinfo
 
 # ==============================================================================
-# OS & SYSTEM FLUFF (FALTU JUNK)
+# TEMPORARY EXTRACTED FILES & UTILITIES (FALTU EXTRACTS)
+# ==============================================================================
+file_formatted.json
+clean-abis/
+all-abis.json
+
+# ==============================================================================
+# OS & SYSTEM FLUFF (SYSTEM JUNK)
 # ==============================================================================
 .DS_Store
 Thumbs.db
