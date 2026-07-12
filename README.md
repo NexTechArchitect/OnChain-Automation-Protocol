@@ -30,7 +30,7 @@
 
 ## 📖 Overview
 
-Smart contracts are inherently passive—they cannot wake themselves up to execute time-sensitive tasks like liquidating undercollateralized loans, compounding DeFi yield, or distributing epoch rewards. 
+Smart contracts are inherently passive. they cannot wake themselves up to execute time-sensitive tasks like liquidating undercollateralized loans, compounding DeFi yield, or distributing epoch rewards. 
 
 The **On-Chain Automation Protocol (Keeper Network)** solves this by abstracting execution into a decentralized layer. Developers simply register their smart contract as a "Job" and fund a reward pool. A permissionless network of financially staked operators (Keepers) continuously monitors these jobs off-chain. The moment a job's conditions are met, keepers race to execute the transaction on-chain. Honest execution earns a cut of the reward pool, while malicious or faulty execution results in the keeper's staked ETH being instantly slashed. 
 
