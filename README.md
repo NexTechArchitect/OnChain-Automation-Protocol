@@ -28,6 +28,14 @@
 
 ---
 
+## 📖 Overview
+
+Smart contracts are inherently passive—they cannot wake themselves up to execute time-sensitive tasks like liquidating undercollateralized loans, compounding DeFi yield, or distributing epoch rewards. 
+
+The **On-Chain Automation Protocol (Keeper Network)** solves this by abstracting execution into a decentralized layer. Developers simply register their smart contract as a "Job" and fund a reward pool. A permissionless network of financially staked operators (Keepers) continuously monitors these jobs off-chain. The moment a job's conditions are met, keepers race to execute the transaction on-chain. Honest execution earns a cut of the reward pool, while malicious or faulty execution results in the keeper's staked ETH being instantly slashed. 
+
+---
+
 ## 🎯 Why This Matters
 
 Most automation protocols rely on centralized cron-bots or permissioned multisigs to trigger execution. This protocol replaces that single point of failure with an **economically secured, permissionless network** of independent operators.
@@ -113,10 +121,11 @@ forge build
 forge test -vvv
 
 ```
-
 <div align="center">
 ---
 
 **Architected & Engineered by [NexTech Architect**](https://github.com/NexTechArchitect)
 
 *Smart Contract Developer · Solidity · Foundry · Full Stack Web3*
+
+Ab tera GitHub landing page bilkul self-explanatory ho gaya hai. Ek normal banda bhi padhega toh usko 10 second mein idea lag jayega ki ye protocol kya solve kar raha hai. Push kar de ise!
