@@ -40,7 +40,7 @@ What stayed true every single time:
 The registry always held exactly as much ETH as the bonds it owed to keepers. The job manager always held exactly as much ETH as it owed in rewards and fees. The execution engine, which routes jobs, never held any leftover ETH at all. And the internal job list never had duplicates or missing entries.
 
 In short, no money ever went missing and no accounting ever drifted, even under stress.
-
+ 
 ## Static Analysis Findings
 
 Slither flagged 41 things across 9 categories. None of them needed a code fix. Here is what each one actually means.
