@@ -4,18 +4,16 @@ out = "out"
 libs = ["lib"]
 solc = "0.8.24"
 
-# Dependency mappings for OpenZeppelin and Chainlink
 remappings = [
     "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
     "@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
 ]
 
-# Optimizer settings for deployment simulation
 optimizer = true
 optimizer_runs = 200
 
 [profile.default.fuzz]
-runs = 256 # Stateless fuzzing cycles per function
+runs = 256 
 
 [profile.default.invariant]
 runs = 256  
