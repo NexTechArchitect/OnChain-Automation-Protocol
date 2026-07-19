@@ -63,4 +63,4 @@ A few design choices worth calling out. The batch execution loop is built so one
 
 The Keeper Network contracts held up well across manual review, automated scanning, and heavy simulated stress testing. No critical or high risk issues were found, and every automated warning was checked and explained. The protocol is ready to move to testnet and, after that, a public bug bounty phase before mainnet.
 
-This report reflects an independent review done at the time of writing. It does not guarantee the code is free of all possible issues. Ongoing monitoring, a public bug bounty, and future audits are recommended as the protocol grows.
+This report reflects an independent review done at the time of writing. It does not guarantee the code is free of all possible issues.
