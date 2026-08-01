@@ -115,7 +115,7 @@ cd OnChain-Automation-Protocol
 # Install dependencies and build
 forge install
 forge build
-
+ 
 # Execute the test suite
 forge test -vvv
 
