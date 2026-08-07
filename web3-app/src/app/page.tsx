@@ -5,7 +5,7 @@ import { useAccount, useConnect, useDisconnect, useReadContract } from "wagmi";
 import { Bricolage_Grotesque, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import type * as ThreeNamespace from "three";
 import { CONTRACT_ADDRESSES, CONTRACT_ABIS } from "@/constants/contracts";
-
+ 
 const displayFont = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
