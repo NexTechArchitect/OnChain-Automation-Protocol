@@ -9,7 +9,7 @@ import { CONTRACT_ADDRESSES, CONTRACT_ABIS } from "@/constants/contracts";
 const displayFont = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
-  variable: "--display-font",
+  variable: "--display-font", 
 });
 const bodyFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
