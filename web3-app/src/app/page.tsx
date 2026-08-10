@@ -24,19 +24,6 @@ const monoFont = JetBrains_Mono({
 
 const shortAddress = (address: string) => `${address.slice(0, 6)}...${address.slice(-4)}`;
 
-/* ======================================================
-   NOTE ON REAL DATA
-   ------------------------------------------------------
-   The two telemetry cards below read live from your actual
-   contracts via wagmi (CONTRACT_ADDRESSES / CONTRACT_ABIS).
-   `functionName` is still a best guess — paste your ABI json
-   and I'll match the real view function names. Until then
-   you'll see a loading skeleton or a dash, never a fake number.
-
-   `flow` and `security` stay as static copy on purpose — it's
-   descriptive text about how the protocol works, not live data.
-   ====================================================== */
-
 type IconName =
   | "lock"
   | "eye"
@@ -64,13 +51,6 @@ const security: { tag: string; title: string; icon: IconName; body: string }[] =
   { tag: "Gas", title: "Base-fee ceiling", icon: "gauge", body: "Every job sets a max base fee, so execution simply waits out gas spikes instead of griefing keepers." },
   { tag: "Guard", title: "Reentrancy-guarded, pausable", icon: "shieldCheck", body: "Strict checks-effects-interactions ordering, a reentrancy guard on every transfer, and an owner-gated pause switch." },
 ];
-
-/* ======================================================
-   ICONS — small hand-drawn SVGs, so the card visuals don't
-   need a new npm dependency. Each one is picked to match
-   what its card actually describes, not decoration for its
-   own sake.
-   ====================================================== */
 
 const iconPaths: Record<IconName, React.ReactNode> = {
   lock: (
@@ -160,11 +140,6 @@ function ArrowIcon() {
   );
 }
 
-/* ======================================================
-   WALLET — real multi-wallet picker via wagmi connectors,
-   instead of grabbing whatever last claimed window.ethereum.
-   ====================================================== */
-
 function WalletButton() {
   const { address, isConnected, chain } = useAccount();
   const { connectors, connect, isPending } = useConnect();
@@ -230,12 +205,6 @@ function WalletButton() {
   );
 }
 
-/* ======================================================
-   METRIC — reads a real value off a contract. Shows a
-   skeleton while loading and a dash on failure, never a
-   made-up number.
-   ====================================================== */
-
 function LiveMetric({
   label,
   address,
@@ -266,20 +235,6 @@ function LiveMetric({
     </div>
   );
 }
-
-/* ======================================================
-   BACKDROP — a persistent, full-page fixed layer, not just
-   the hero. Position: fixed means it never scrolls away, so
-   the motion reads as one continuous canvas behind the whole
-   page instead of stopping the moment the hero ends.
-
-   Real video first (drop a clip into public/videos), falls
-   back to a hand-built WebGL glass scene (bloom + grain),
-   falls back again to a static gradient for prefers-reduced-
-   motion. The scene also picks up a gentle scroll-linked tilt,
-   and pauses its render loop while the tab is hidden so it
-   stays cheap on phones over a long session.
-   ====================================================== */
 
 function GlassScene() {
   const hostRef = useRef<HTMLDivElement>(null);
@@ -321,7 +276,6 @@ function GlassScene() {
       const world = new THREE.Group();
       scene.add(world);
 
-      // Soft floating glass shards, tinted in three brand hues
       const shardGeo = track(new THREE.IcosahedronGeometry(1, 0));
       const shardColors = [0xffffff, 0xdff7f1, 0xffe9c9];
       const shardMaterials = shardColors.map((color) =>
@@ -478,14 +432,6 @@ function CinematicBackdrop() {
   );
 }
 
-/* ======================================================
-   FRAME — a fixed, non-interactive border that hugs the
-   real edge of the viewport with four corner brackets.
-   Pointer-events: none, so it never blocks a click; it sits
-   above every section (and the backdrop) purely as a design
-   accent, corner to corner, top of the page to the bottom.
-   ====================================================== */
-
 function ViewportFrame() {
   return (
     <div className="viewport-frame" aria-hidden="true">
@@ -496,10 +442,6 @@ function ViewportFrame() {
     </div>
   );
 }
-
-/* ======================================================
-   SCROLL REVEAL
-   ====================================================== */
 
 function useReveal<T extends HTMLElement>() {
   const ref = useRef<T>(null);
@@ -536,10 +478,6 @@ function Reveal({ children, className = "" }: { children: React.ReactNode; class
     </div>
   );
 }
-
-/* ======================================================
-   SECTIONS
-   ====================================================== */
 
 function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -972,12 +910,12 @@ const styles = `
 
   /* ---------- Hero ---------- */
 
-  .hero { position: relative; min-height: 92svh; padding-top: 120px; }
+  .hero { position: relative; padding-top: 120px; }
 
   .hero-body {
     position: relative; z-index: 3;
     display: grid; grid-template-columns: minmax(0,1fr) 320px; gap: 32px; align-items: end;
-    width: min(1180px, calc(100% - 36px)); margin: 0 auto; min-height: calc(92svh - 140px); padding-bottom: 60px;
+    width: min(1180px, calc(100% - 36px)); margin: 0 auto; padding-bottom: 60px;
   }
 
   .hero-enter { opacity: 0; transform: translateY(22px); transition: opacity 760ms cubic-bezier(.16,1,.3,1), transform 760ms cubic-bezier(.16,1,.3,1); }
@@ -1138,13 +1076,13 @@ const styles = `
   @media (max-width: 680px) {
     .site-header { top: 12px; width: calc(100% - 20px); padding: 8px 10px; }
     .brand strong { display: none; }
-    .hero { padding-top: 92px; }
+    .hero { padding-top: 92px; padding-bottom: 48px; }
     .hero-copy { padding: 22px; border-radius: 20px; }
     .hero h1 { font-size: clamp(2.3rem, 11vw, 3.4rem); }
     .hero-actions { flex-direction: column; }
     .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
     .telemetry-stack { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .section { padding: 64px 0; }
+    .section { padding: 48px 0; }
     .flow-grid, .security-grid { grid-template-columns: 1fr; }
     .cta-panel { flex-direction: column; align-items: flex-start; padding: 26px; }
     .cta-panel::after { width: 220px; height: 220px; top: -90px; right: -60px; }
